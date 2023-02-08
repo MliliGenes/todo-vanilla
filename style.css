@@ -168,7 +168,7 @@ section main .task .bi-pencil-square {
   font-size: 1.5em;
   color: #eee9da;
 }
-section main .task .bi-pencil-square:hove {
+section main .task .bi-pencil-square:hover {
   color: rgb(91, 228, 91);
 }
 section main .task .bi-check-lg {
