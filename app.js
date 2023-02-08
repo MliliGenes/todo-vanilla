@@ -80,6 +80,17 @@ window.addEventListener("load", () => {
       task.classList.remove("edit");
       task.value = task.value.trim();
       isdit = false;
+      let id = target.previousElementSibling.getAttribute("id");
+      let newdatabase = {};
+      for (let item of Object.entries(database)) {
+        if (item[0] == id) {
+          newdatabase[item[0]] = { task: task.value, state: item[1].state };
+        } else {
+          newdatabase[item[0]] = { task: item[1].task, state: item[1].state };
+        }
+      }
+      database = newdatabase;
+      localStorage.setItem("tasks", JSON.stringify(database));
     }
 
     if (target.classList.contains("bi-trash-fill")) {
@@ -119,7 +130,7 @@ window.addEventListener("load", () => {
         console.log(newdatabase);
         database = newdatabase;
         localStorage.setItem("tasks", JSON.stringify(database));
-        window.location.reload();
+        renderTasks();
       } else {
         let id = target.nextElementSibling.getAttribute("id");
         let newdatabase = {};
@@ -133,7 +144,7 @@ window.addEventListener("load", () => {
         console.log(newdatabase);
         database = newdatabase;
         localStorage.setItem("tasks", JSON.stringify(database));
-        window.location.reload();
+        renderTasks();
       }
     }
   });
