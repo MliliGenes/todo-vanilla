@@ -168,6 +168,9 @@ section main .task .bi-pencil-square {
   font-size: 1.5em;
   color: #eee9da;
 }
+section main .task .bi-pencil-square:hove {
+  color: rgb(91, 228, 91);
+}
 section main .task .bi-check-lg {
   position: absolute;
   right: 60px;
@@ -180,7 +183,9 @@ section main .task .bi-trash-fill {
   font-size: 1.5em;
   color: #eee9da;
 }
-
+section main .task .bi-trash-fill:hover {
+  color: rgb(255, 87, 87);
+}
 .checked {
   width: 20px;
   height: 20px;
@@ -189,19 +194,16 @@ section main .task .bi-trash-fill {
   border-radius: 50% !important;
 }
 .checkedtask {
-   text-decoration: line-through wavy 1px rgb(255, 87, 87);
-    color: rgba(224, 232, 240, 0.85) !important;
+  text-decoration: line-through wavy 1px rgb(255, 87, 87);
+  color: rgba(224, 232, 240, 0.85) !important;
 }
 .edit {
-    color: rgb(91, 228, 91) !important;
+  color: rgb(91, 228, 91) !important;
 }
 
 .delet {
   transform: translate(500px) !important;
   opacity: 0 !important;
-}
-.deleticon {
-  color: rgb(255, 25, 25) !important;
 }
 
 footer {
