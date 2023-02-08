@@ -193,7 +193,7 @@ section main .task .bi-trash-fill {
     color: rgba(224, 232, 240, 0.85) !important;
 }
 .edit {
-  color: lightgreen !important;
+    color: rgb(91, 228, 91) !important;
 }
 
 .delet {
