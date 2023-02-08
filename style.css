@@ -189,7 +189,7 @@ section main .task .bi-trash-fill {
   border-radius: 50% !important;
 }
 .checkedtask {
-  text-decoration: line-through wavy 2px rgb(255, 87, 87);
+   text-decoration: line-through wavy 1px rgb(255, 87, 87);
     color: rgba(224, 232, 240, 0.85) !important;
 }
 .edit {
