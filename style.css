@@ -65,9 +65,6 @@ section header form {
   align-items: center;
   gap: 15px;
   padding: 15px;
-    border-radius: 15px;
-  box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
-    26px 30px 113px rgba(0, 0, 0, 0.07);
 }
 section header form input {
   height: 50px;
@@ -192,7 +189,7 @@ section main .task .bi-trash-fill {
   border-radius: 50% !important;
 }
 .checkedtask {
-  text-decoration: line-through wavy 2px rgba(238, 233, 218);
+  text-decoration: line-through wavy 2px rgb(255, 87, 87);
   color: rgb(255, 87, 87) !important;
 }
 .edit {
