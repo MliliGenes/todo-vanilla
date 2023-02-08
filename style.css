@@ -190,7 +190,7 @@ section main .task .bi-trash-fill {
 }
 .checkedtask {
   text-decoration: line-through wavy 2px rgb(255, 87, 87);
-  color: rgb(255, 87, 87) !important;
+  color: #e0e8f081 !important;
 }
 .edit {
   color: lightgreen !important;
