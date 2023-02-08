@@ -14,13 +14,13 @@ body {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #eee9da;
+  background-color: #fdf5dd;
 }
 section {
   margin-top: 250px;
   min-width: 55vw;
   height: 550px;
-  background-image: linear-gradient(160deg, #bdcdd6, #e0e8f0);
+  background-image: linear-gradient(160deg, #91d8e4, #bfeaf5);
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
@@ -39,7 +39,7 @@ section header {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: #eee9da;
+  background-color: #fdf5dd;
   border-radius: 15px;
   gap: 15px;
 }
@@ -50,7 +50,7 @@ h1 {
   font-family: "Bebas Neue", cursive;
   color: transparent;
   -webkit-background-clip: text;
-  background-image: linear-gradient(160deg, #bdcdd6, #e0e8f0);
+  background-image: linear-gradient(160deg, #91d8e4, #bfeaf5);
   background-repeat: no-repeat;
   background-attachment: fixed;
   letter-spacing: 2px;
@@ -70,11 +70,11 @@ section header form input {
   height: 50px;
   border: none;
   outline: none;
-  background-image: linear-gradient(160deg, #bdcdd6, #e0e8f0);
+  background-image: linear-gradient(160deg, #91d8e4, #bfeaf5);
   background-repeat: no-repeat;
   background-attachment: fixed;
   border-radius: 8px;
-  color: #eee9da;
+  color: #fdf5dd;
   box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
     26px 30px 113px rgba(0, 0, 0, 0.07);
 }
@@ -86,7 +86,7 @@ section header form .input {
   font-size: 1.4em;
 }
 section header form .input::placeholder {
-  color: rgba(238, 233, 218, 0.7);
+  color: #fdf5ddab;
 }
 section header form .submit {
   flex: 1;
@@ -102,7 +102,7 @@ section header form .submit:active {
 section main {
   width: 100%;
   height: 405px;
-  background-color: #eee9da;
+  background-color: #fdf5dd;
   border-radius: 15px;
   padding: 15px;
   display: flex;
@@ -122,7 +122,7 @@ section main .task {
   border-radius: 8px;
   width: 100%;
   min-height: 50px;
-  background-image: linear-gradient(160deg, #bdcdd6, #e0e8f0);
+  background-image: linear-gradient(160deg, #91d8e4, #bfeaf5);
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
@@ -135,10 +135,10 @@ section main .task {
 section main .task .checkbox {
   width: 20px;
   height: 20px;
-  background-color: #eee9da;
+  background-color: #fdf5dd;
   border-radius: 50%;
   transition: all ease 200ms;
-  border: #bdcdd6;
+  border: #91d8e4;
 }
 section main .task .task-text {
   position: absolute;
@@ -148,10 +148,13 @@ section main .task .task-text {
   width: 40%;
   background-color: transparent;
   font-size: 1.5em;
-  color: #eee9da;
+  color: #fdf5dd;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 1.6px;
   transition: all ease 200ms;
+}
+section main .task .task-text:focus {
+  border-bottom: 2px solid rgb(91, 228, 91);
 }
 section main .task .bi {
   transform: translateY(2.5px);
@@ -166,7 +169,7 @@ section main .task .bi-pencil-square {
   position: absolute;
   right: 60px;
   font-size: 1.5em;
-  color: #eee9da;
+  color: #fdf5dd;
 }
 section main .task .bi-pencil-square:hover {
   color: rgb(91, 228, 91);
@@ -175,13 +178,13 @@ section main .task .bi-check-lg {
   position: absolute;
   right: 60px;
   font-size: 1.5em;
-  color: #eee9da;
+  color: #fdf5dd;
 }
 section main .task .bi-trash-fill {
   position: absolute;
   right: 20px;
   font-size: 1.5em;
-  color: #eee9da;
+  color: #fdf5dd;
 }
 section main .task .bi-trash-fill:hover {
   color: rgb(255, 87, 87);
@@ -189,8 +192,8 @@ section main .task .bi-trash-fill:hover {
 .checked {
   width: 20px;
   height: 20px;
-  background-color: #bdcdd6 !important;
-  border: 5px solid #eee9da !important;
+  background-color: #91d8e4 !important;
+  border: 5px solid #fdf5dd !important;
   border-radius: 50% !important;
 }
 .checkedtask {
@@ -209,13 +212,14 @@ section main .task .bi-trash-fill:hover {
 footer {
   width: 100%;
   min-height: 60px;
-  background-image: linear-gradient(45deg, #bdcdd6, #e0e8f0);
+  background-image: linear-gradient(160deg, #91d8e4, #bfeaf5);
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 40px;
+  letter-spacing: 1.5px;
 }
 footer p {
   color: lightslategray;
@@ -228,9 +232,12 @@ footer p {
   body {
     gap: 20px;
   }
+  h1 {
+    transform: translateY(0px);
+  }
   section {
     margin: 20px;
-    margin-top: 250px;
+    margin-top: 180px;
   }
   section header form {
     min-height: 150px;
@@ -253,3 +260,4 @@ footer p {
     gap: 15px;
   }
 }
+
