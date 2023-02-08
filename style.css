@@ -9,17 +9,20 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  gap: 50px;
   width: 100%;
   height: 100vh;
-  gap:50px;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #eee9da;
 }
 section {
+  margin-top: 250px;
   min-width: 55vw;
   height: 550px;
-  background-color: #bdcdd6;
+  background-image: linear-gradient(160deg, #bdcdd6, #e0e8f0);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -27,6 +30,8 @@ section {
   border-radius: 20px;
   padding: 20px;
   gap: 20px;
+  box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
+    26px 30px 113px rgba(0, 0, 0, 0.07);
 }
 section header {
   width: 100%;
@@ -39,11 +44,18 @@ section header {
   gap: 15px;
 }
 h1 {
-  transform: translateY(50px);
-  font-size: 5em;
+  position: absolute;
+  transform: translateY(20px);
+  font-size: 10rem;
   font-family: "Bebas Neue", cursive;
-  color: #bdcdd6;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(160deg, #bdcdd6, #e0e8f0);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   letter-spacing: 2px;
+  text-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
+    26px 30px 113px rgba(0, 0, 0, 0.07);
 }
 section header form {
   width: 100%;
@@ -53,14 +65,20 @@ section header form {
   align-items: center;
   gap: 15px;
   padding: 15px;
+  box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
+    26px 30px 113px rgba(0, 0, 0, 0.07);
 }
 section header form input {
   height: 50px;
   border: none;
   outline: none;
-  background-color: #bdcdd6;
+  background-image: linear-gradient(160deg, #bdcdd6, #e0e8f0);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   border-radius: 8px;
   color: #eee9da;
+  box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
+    26px 30px 113px rgba(0, 0, 0, 0.07);
 }
 section header form .input {
   flex: 3;
@@ -70,7 +88,7 @@ section header form .input {
   font-size: 1.4em;
 }
 section header form .input::placeholder {
-  color: rgba(238, 233, 218, 0.4);
+  color: rgba(238, 233, 218, 0.7);
 }
 section header form .submit {
   flex: 1;
@@ -94,6 +112,8 @@ section main {
   gap: 15px;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
+    26px 30px 113px rgba(0, 0, 0, 0.07);
 }
 section main::-webkit-scrollbar {
   display: none;
@@ -104,11 +124,15 @@ section main .task {
   border-radius: 8px;
   width: 100%;
   min-height: 50px;
-  background-color: #bdcdd6;
+  background-image: linear-gradient(160deg, #bdcdd6, #e0e8f0);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   padding: 0 15px;
   transition: all ease 200ms;
+  box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
+    26px 30px 113px rgba(0, 0, 0, 0.07);
 }
 section main .task .checkbox {
   width: 20px;
@@ -185,24 +209,28 @@ section main .task .bi-trash-fill {
 footer {
   width: 100%;
   min-height: 60px;
-  background-color: #bdcdd6;
+  background-image: linear-gradient(45deg, #bdcdd6, #e0e8f0);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
 }
 footer p {
-  color: #eee9da;
+  color: lightslategray;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600px;
   text-transform: uppercase;
+  font-size: 0.8em;
 }
 @media screen and (max-width: 1000px) {
-    body {
+  body {
     gap: 20px;
   }
   section {
     margin: 20px;
+    margin-top: 250px;
   }
   section header form {
     min-height: 150px;
@@ -225,4 +253,3 @@ footer p {
     gap: 15px;
   }
 }
-
