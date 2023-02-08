@@ -9,7 +9,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  padding-top: 180px;
+  padding-top: 120px;
   gap: 50px;
   width: 100%;
   height: 100vh;
@@ -19,7 +19,7 @@ body {
 }
 section {
   min-width: 55vw;
-  height: 480px;
+  height: auto;
   background-image: linear-gradient(160deg, #f99417, #ffbc69);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -42,9 +42,9 @@ section header {
   gap: 15px;
 }
 h1 {
-  top: 2vh;
+  top: 1vh;
   position: absolute;
-  font-size: 8rem;
+  font-size: 6rem;
   font-family: "Bebas Neue", cursive;
   color: transparent;
   -webkit-background-clip: text;
@@ -100,7 +100,7 @@ section header form .submit:active {
 
 section main {
   width: 100%;
-  height: 405px;
+  height: 210px;
   background-color: #5d3891;
   padding: 15px;
   display: flex;
@@ -230,8 +230,16 @@ footer p {
 }
 
 @media screen and (min-width: 1224px) {
+  body {
+    padding-top: 120px;
+  }
+  h1 {
+    top: 10px;
+    font-size: 6rem;
+  }
   section {
     width: 45vw;
+    height: auto;
   }
   section header form {
     height: 80px;
@@ -241,6 +249,9 @@ footer p {
     flex: 3;
   }
   section header form .submit {
-    flex: 3;
+    flex: 1;
+  }
+  section main {
+    height: 280px;
   }
 }
