@@ -198,6 +198,9 @@ footer p {
   text-transform: uppercase;
 }
 @media screen and (max-width: 1000px) {
+    body {
+    gap: 20px;
+  }
   section {
     margin: 20px;
   }
