@@ -1,0 +1,414 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg-color: #d3d3d3;
+  --bg2-color: #808080;
+  --bg3-color: #9c9c9c;
+  --text-color: #4f4f4f;
+  --text2-color: #ededed;
+  --textchecked-color: #ededed80;
+  --t: ease 500ms;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-top: 120px;
+  gap: 50px;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--bg-color);
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+}
+.toggle-cont {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: start;
+}
+.toggle-cont .toggle {
+  position: relative;
+  width: 40px;
+  height: 25px;
+  background-image: linear-gradient(45deg, var(--bg2-color), var(--bg3-color));
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.toggle-cont .toggle .dot {
+  position: absolute;
+  left: 5px;
+  height: 15px;
+  width: 15px;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+  transition: all ease 200ms;
+}
+.togglechecked {
+  transform: translateX(15px);
+}
+.toggle-cont .theme {
+  font-family: "Bebas Neue", cursive;
+  color: var(--text-color);
+}
+section {
+  width: 85vw;
+  height: auto;
+  background-image: linear-gradient(45deg, var(--bg2-color), var(--bg3-color));
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
+    26px 30px 113px rgba(0, 0, 0, 0.07);
+}
+section header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--bg-color);
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+  gap: 15px;
+}
+h1 {
+  top: 1vh;
+  position: absolute;
+  font-size: 6rem;
+  font-family: "Bebas Neue", cursive;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    45deg,
+    var(--bg2-color) 50%,
+    var(--bg3-color)
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  letter-spacing: 2px;
+  text-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
+    26px 30px 113px rgba(0, 0, 0, 0.07);
+}
+section header form {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+section header form input {
+  min-height: 50px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-image: linear-gradient(45deg, var(--bg2-color), var(--bg3-color));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text2-color);
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+  box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
+    26px 30px 113px rgba(0, 0, 0, 0.07);
+}
+section header form .input {
+  flex: 1;
+  padding-left: 20px;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1.5px;
+  font-size: 1.4em;
+}
+section header form .input::placeholder {
+  color: var(--text2-color);
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+
+  opacity: 0.4;
+}
+section header form .submit {
+  flex: 1;
+  padding: 10px;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1.2px;
+  font-size: 1.5em;
+}
+section header form .submit:active {
+  transform: scale(0.95);
+}
+
+section main {
+  width: 100%;
+  height: auto;
+  min-height: 90px;
+  max-height: 300px;
+  background-color: var(--bg-color);
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
+    26px 30px 113px rgba(0, 0, 0, 0.07);
+}
+section main::-webkit-scrollbar {
+  display: none;
+}
+
+section main .task {
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+  background-image: linear-gradient(45deg, var(--bg2-color), var(--bg3-color));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  transition: all ease 200ms;
+  box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
+    26px 30px 113px rgba(0, 0, 0, 0.07);
+}
+section main .task .checkbox {
+  width: 16px;
+  height: 16px;
+  background-color: var(--text2-color);
+  border-radius: 50%;
+  transition: all ease 200ms;
+}
+section main .task .task-text {
+  position: relative;
+  left: 20px;
+  border: none;
+  outline: none;
+  width: 40%;
+  background-color: transparent;
+  font-size: 1.5em;
+  color: var(--text2-color);
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1.6px;
+  transition: all ease 200ms;
+}
+section main .task::before {
+  position: absolute;
+  content: attr(data-date);
+  top: 0;
+  left: 18px;
+  width: auto;
+  height: auto;
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  opacity: 0;
+  letter-spacing: 0.1em;
+}
+section main .task:hover::before {
+  top: -13px;
+  opacity: 1;
+}
+section main .task .bi {
+  transform: translateY(2.5px);
+  transform-origin: center;
+  transition: all ease 200ms;
+}
+section main .task .bi:active {
+  opacity: 0.9;
+  transform: scale(0.9);
+}
+section main .task .bi-pencil-square {
+  position: absolute;
+  right: 60px;
+  font-size: 1.5em;
+  color: var(--text2-color);
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+}
+section main .task .bi-pencil-square:hover {
+  color: var(--text-color);
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+}
+section main .task .bi-check-lg {
+  position: absolute;
+  right: 60px;
+  font-size: 1.5em;
+  color: var(--text-color);
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+}
+section main .task .bi-trash-fill {
+  position: absolute;
+  right: 20px;
+  font-size: 1.5em;
+  color: var(--text2-color);
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+}
+section main .task .bi-trash-fill:hover {
+  color: var(--text-color);
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+}
+.checked {
+  width: 16px;
+  height: 16px;
+  background-color: var(--text-color) !important;
+  border: 0.3em solid var(--text2-color) !important;
+  border-radius: 50% !important;
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+}
+.checkedtask {
+  text-decoration: line-through 3px var(--text-color);
+  color: var(--textchecked-color) !important;
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+}
+.edit {
+  color: var(--text-color) !important;
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+}
+
+.delet {
+  transform: translate(500px) !important;
+  opacity: 0 !important;
+  transition: color var(--t), background-color var(--t),
+    background-image var(--t), border var(--t);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 60px;
+  background-image: linear-gradient(45deg, var(--bg2-color), var(--bg3-color));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 40px;
+  letter-spacing: 1.5px;
+}
+footer p {
+  color: var(--text2-color);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+.dn {
+  display: flex !important;
+}
+@media screen and (min-width: 1224px) {
+  body {
+    padding-top: 120px;
+  }
+  .toggle-cont {
+    top: 30px;
+    right: 30px;
+  }
+  .toggle-cont .toggle {
+    width: 55px;
+    height: 35px;
+    padding: 8px;
+  }
+  .toggle-cont .toggle .dot {
+    left: 8px;
+    height: 20px;
+    width: 20px;
+  }
+  .togglechecked {
+    height: 20px;
+    width: 20px;
+    transform: translateX(20px);
+  }
+  .toggle-cont .theme {
+    font-size: 1.5em;
+  }
+  h1 {
+    top: 10px;
+    font-size: 6rem;
+  }
+  section {
+    width: 60vw;
+    height: auto;
+  }
+  section header form {
+    height: auto;
+    flex-direction: row;
+  }
+  section header form .input {
+    flex: 3;
+  }
+  section header form .submit {
+    flex: 1;
+  }
+  section main {
+    height: auto;
+    max-height: 300px;
+  }
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1824px) {
+  body {
+    padding-top: 230px;
+  }
+  h1 {
+    top: 15px;
+    font-size: 10rem;
+  }
+  section {
+    width: 60vw;
+    height: auto;
+  }
+  section header form {
+    height: auto;
+    flex-direction: row;
+  }
+  section header form .input {
+    flex: 3;
+  }
+  section header form .submit {
+    flex: 1;
+  }
+  section main {
+    height: auto;
+    max-height: 370px;
+  }
+}
