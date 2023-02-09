@@ -21,10 +21,19 @@ window.addEventListener("load", () => {
     localStorage.setItem("tasks", JSON.stringify(database));
 
     renderTasks();
+    mainExist();
   });
   renderTasks();
-
+  mainExist();
+  function mainExist() {
+    if (Object.keys(database).length !== 0) {
+      taskslist.classList.add("dn");
+    } else if (Object.keys(database).length === 0) {
+      taskslist.classList.remove("dn");
+    }
+  }
   function renderTasks() {
+    console.log;
     taskslist.innerHTML = "";
     for (let item of Object.entries(database)) {
       let date = new Date(item[0] * 1);
@@ -118,6 +127,7 @@ window.addEventListener("load", () => {
         }
         database = newdatabase;
         localStorage.setItem("tasks", JSON.stringify(database));
+        mainExist();
       }, 250);
     }
 
