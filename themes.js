@@ -13,16 +13,16 @@ window.addEventListener("load", () => {
   ];
   const lightColors = [
     "#d3d3d3",
-    "#808080",
+    "#4b4b4b",
     "#9c9c9c",
-    "#4f4f4f",
+    "#3a3a3a",
     "#ededed",
     "#ededed80",
   ];
   const darkColors = [
     "#1f1f1f",
+    "#434343",
     "#b9b9b9",
-    "#828282",
     "#dbdbdb",
     "#272727",
     "#21212180",
