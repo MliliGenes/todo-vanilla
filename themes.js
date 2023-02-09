@@ -27,7 +27,6 @@ window.addEventListener("load", () => {
     "#272727",
     "#21212180",
   ];
-
   var themes = JSON.parse(localStorage.getItem("themes")) || {};
   function renderTheme() {
     if (themes["theme"] == "light") {
@@ -52,7 +51,7 @@ window.addEventListener("load", () => {
       }
     }
   }
-
+  renderTheme();
   toggle.addEventListener("click", (e) => {
     if (themes["theme"] == "light") {
       themes["theme"] = "dark";
