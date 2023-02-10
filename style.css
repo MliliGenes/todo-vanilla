@@ -7,10 +7,10 @@
 :root {
   --bg-color: #d3d3d3;
   --bg2-color: #4b4b4b;
-  --bg3-color: #9c9c9c;
-  --text-color: #4f4f4f;
+  --bg3-color: #848484;
+  --text-color: #3a3a3a;
   --text2-color: #ededed;
-  --textchecked-color: #ededed80;
+  --textchecked-color: #ededed80 #858585;
   --t: ease 500ms;
 }
 body {
@@ -40,8 +40,8 @@ body {
 }
 .toggle-cont .toggle {
   position: relative;
-  width: 40px;
-  height: 25px;
+  width: 45px;
+  height: 28px;
   background-image: linear-gradient(45deg, var(--bg2-color), var(--bg3-color));
   transition: color var(--t), background-color var(--t),
     background-image var(--t), border var(--t);
@@ -54,14 +54,28 @@ body {
 .toggle-cont .toggle .dot {
   position: absolute;
   left: 5px;
-  height: 15px;
-  width: 15px;
+  height: 18px;
+  width: 18px;
   background-color: var(--bg-color);
   border-radius: 50%;
   transition: all ease 200ms;
+  color: var(--bg2-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toggle-cont .toggle .bi-brightness-low-fill {
+  font-size: 1em;
+}
+.toggle-cont .toggle .bi-moon-stars-fill {
+  font-size: 0.75em;
 }
 .togglechecked {
-  transform: translateX(15px);
+  transform: translateX(17px);
 }
 .toggle-cont .theme {
   font-family: "Bebas Neue", cursive;
@@ -170,14 +184,13 @@ section main {
   background-color: var(--bg-color);
   transition: color var(--t), background-color var(--t),
     background-image var(--t), border var(--t);
-
   padding: 20px;
   display: none;
   flex-direction: column;
   gap: 20px;
   overflow-y: scroll;
   overflow-x: hidden;
-  /* scroll-snap-type: y mandatory; */
+  scroll-snap-type: y mandatory;
   box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
     26px 30px 113px rgba(0, 0, 0, 0.07);
 }
@@ -185,7 +198,7 @@ section main::-webkit-scrollbar {
   width: 5px;
 }
 section main::-webkit-scrollbar-track {
-  background-color: var(--bg-color);
+  background-color: var(--text2-color);
 }
 section main::-webkit-scrollbar-thumb {
   background-color: var(--bg2-color);
@@ -347,12 +360,13 @@ footer p {
   .toggle-cont .toggle {
     width: 55px;
     height: 35px;
-    padding: 8px;
+    padding: 6px;
   }
   .toggle-cont .toggle .dot {
-    left: 8px;
-    height: 20px;
-    width: 20px;
+    left: 6px;
+    top: 6px;
+    height: 22px;
+    width: 22px;
   }
   .togglechecked {
     height: 20px;

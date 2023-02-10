@@ -13,16 +13,16 @@ window.addEventListener("load", () => {
   ];
   const lightColors = [
     "#d3d3d3",
-    "#4b4b4b",
-    "#9c9c9c",
+    "#444343",
+    "#858585",
     "#3a3a3a",
     "#ededed",
     "#ededed80",
   ];
   const darkColors = [
     "#1f1f1f",
-    "#434343",
-    "#b9b9b9",
+    "#c4c4c4",
+    "#a8a8a8",
     "#dbdbdb",
     "#272727",
     "#21212180",
@@ -31,6 +31,8 @@ window.addEventListener("load", () => {
   function renderTheme() {
     if (themes["theme"] == "light") {
       dot.classList.remove("togglechecked");
+      dot.classList.remove("bi-moon-stars-fill");
+      dot.classList.add("bi-brightness-low-fill");
       theme.innerText = "light";
       let index = 0;
       for (let v of vars) {
@@ -40,6 +42,8 @@ window.addEventListener("load", () => {
       }
     } else {
       dot.classList.add("togglechecked");
+      dot.classList.add("bi-moon-stars-fill");
+      dot.classList.remove("bi-brightness-low-fill");
       theme.innerText = "dark";
       for (let v of vars) {
         let index = 0;
