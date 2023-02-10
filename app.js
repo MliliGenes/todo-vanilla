@@ -3,6 +3,7 @@ window.addEventListener("load", () => {
   const submit = document.querySelector("#submit");
   const taskslist = document.querySelector("#taskslist");
   const title = document.querySelector("h1");
+  const clear = document.querySelector(".clear");
 
   ischecked = true;
   var isdit = false;
@@ -24,19 +25,28 @@ window.addEventListener("load", () => {
     renderTasks();
     mainExist();
     taskCount();
+    cleardata();
   });
   renderTasks();
   mainExist();
   taskCount();
+  cleardata();
 
   function mainExist() {
     if (Object.keys(database).length !== 0) {
       taskslist.classList.add("dn");
     } else if (Object.keys(database).length === 0) {
       taskslist.classList.remove("dn");
+      clear.classList.remove("dn");
     }
   }
-
+  function cleardata() {
+    if (Object.keys(database).length > 1) {
+      clear.classList.add("showclear");
+    } else {
+      clear.classList.remove("showclear");
+    }
+  }
   function taskCount() {
     if (Object.keys(database).length > 0) {
       title.setAttribute("data-count", Object.keys(database).length);
@@ -76,6 +86,30 @@ window.addEventListener("load", () => {
       }
     });
   }
+  clear.addEventListener("click", (e) => {
+    if (isdit) {
+      return;
+    }
+    if (
+      e.target.classList.contains("cleartxt") ||
+      e.target.classList.contains("clear")
+    ) {
+      const clearTasks = document.querySelectorAll(".task");
+      for (let task of clearTasks) {
+        let id = task.firstElementChild.nextElementSibling.getAttribute("id");
+        task.classList.add("delet");
+        setTimeout(function () {
+          taskslist.removeChild(task);
+          let newdatabase = {};
+          database = newdatabase;
+          localStorage.setItem("tasks", JSON.stringify(database));
+          cleardata();
+          mainExist();
+          taskCount();
+        }, 300);
+      }
+    }
+  });
   taskslist.addEventListener("click", (e) => {
     let target = e.target;
     if (target.classList.contains("bi-pencil-square")) {
@@ -121,12 +155,12 @@ window.addEventListener("load", () => {
         database = newdatabase;
         localStorage.setItem("tasks", JSON.stringify(database));
         renderTasks();
+        cleardata();
       }
     }
 
     if (target.classList.contains("bi-trash-fill")) {
       let task = target.parentElement;
-      target.classList.add("deleticon");
       let id =
         target.previousElementSibling.previousElementSibling.getAttribute("id");
       task.classList.add("delet");
@@ -141,8 +175,9 @@ window.addEventListener("load", () => {
         }
         database = newdatabase;
         localStorage.setItem("tasks", JSON.stringify(database));
-        mainExist();
         taskCount();
+        mainExist();
+        cleardata();
       }, 250);
     }
 

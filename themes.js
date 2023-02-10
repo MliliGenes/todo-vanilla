@@ -3,6 +3,7 @@ window.addEventListener("load", () => {
   const toggle = document.querySelector(".toggle");
   const dot = document.querySelector(".dot");
   const text = document.querySelector(".txt");
+
   const vars = [
     "--bg-color",
     "--bg2-color",
