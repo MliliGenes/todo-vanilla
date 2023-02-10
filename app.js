@@ -1,10 +1,8 @@
 window.addEventListener("load", () => {
-  window.addEventListener("keyup", (e) => {
-    var key = e.keyCode;
-  });
   const input = document.querySelector("#input");
   const submit = document.querySelector("#submit");
   const taskslist = document.querySelector("#taskslist");
+  const title = document.querySelector("h1");
 
   ischecked = true;
   var isdit = false;
@@ -25,9 +23,12 @@ window.addEventListener("load", () => {
 
     renderTasks();
     mainExist();
+    taskCount();
   });
   renderTasks();
   mainExist();
+  taskCount();
+
   function mainExist() {
     if (Object.keys(database).length !== 0) {
       taskslist.classList.add("dn");
@@ -35,6 +36,15 @@ window.addEventListener("load", () => {
       taskslist.classList.remove("dn");
     }
   }
+
+  function taskCount() {
+    if (Object.keys(database).length > 0) {
+      title.setAttribute("data-count", Object.keys(database).length);
+    } else {
+      title.setAttribute("data-count", 0);
+    }
+  }
+
   function renderTasks() {
     console.log;
     taskslist.innerHTML = "";
@@ -132,6 +142,7 @@ window.addEventListener("load", () => {
         database = newdatabase;
         localStorage.setItem("tasks", JSON.stringify(database));
         mainExist();
+        taskCount();
       }, 250);
     }
 
