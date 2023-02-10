@@ -310,6 +310,7 @@ section main .task .task-text {
   color: var(--text2-color);
   font-family: "Bebas Neue", cursive;
   letter-spacing: 1.6px;
+  cursor: auto;
   transition: all ease 200ms;
 }
 section main .task::before {
