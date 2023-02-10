@@ -10,7 +10,7 @@
   --bg3-color: #848484;
   --text-color: #3a3a3a;
   --text2-color: #ededed;
-  --textchecked-color: #ededed80 #858585;
+  --textchecked-color: #ededed80;
   --t: ease 500ms;
 }
 body {
