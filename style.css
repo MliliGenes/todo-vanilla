@@ -124,14 +124,13 @@ section .clear {
   width: 100%;
   height: 50px;
   background-color: var(--bg-color);
-  transition: background-color var(--t);
+  transition: background-color var(--t), opacity 300ms ease;
   display: none;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   user-select: none;
   opacity: 0;
-  transition: opacity 300ms ease;
 }
 section .clear .cleartxt {
   color: var(--bg2-color);
