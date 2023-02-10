@@ -32,6 +32,18 @@ window.addEventListener("load", () => {
   taskCount();
   cleardata();
 
+  function updateTitle() {
+    if (Object.keys(database).length > 1) {
+      document.title =
+        "todo list - " + title.getAttribute("data-count") + " tasks ";
+    } else if (Object.keys(database).length == 1) {
+      document.title =
+        "todo list - " + title.getAttribute("data-count") + " task";
+    } else {
+      document.title = "todo list";
+    }
+  }
+
   function mainExist() {
     if (Object.keys(database).length !== 0) {
       taskslist.classList.add("dn");
@@ -40,24 +52,29 @@ window.addEventListener("load", () => {
       clear.classList.remove("dn");
     }
   }
+
   function cleardata() {
     if (Object.keys(database).length > 1) {
       clear.classList.add("showclear");
     } else {
       clear.classList.remove("showclear");
     }
+    updateTitle();
   }
+
   function taskCount() {
     if (Object.keys(database).length > 0) {
       title.setAttribute("data-count", Object.keys(database).length);
     } else {
       title.setAttribute("data-count", 0);
     }
+    updateTitle();
   }
 
   function renderTasks() {
     console.log;
     taskslist.innerHTML = "";
+
     for (let item of Object.entries(database)) {
       let date = new Date(item[0] * 1);
       let humanForm = date.toLocaleString().replace(", ", " ");
@@ -73,6 +90,7 @@ window.addEventListener("load", () => {
       div.innerHTML = template;
       taskslist.appendChild(div);
     }
+
     const allTasks = document.querySelectorAll(".task-text");
     allTasks.forEach((oneTask) => {
       if (oneTask.getAttribute("data-set") == "true") {
@@ -85,7 +103,9 @@ window.addEventListener("load", () => {
         ischecked = true;
       }
     });
+    updateTitle();
   }
+
   clear.addEventListener("click", (e) => {
     if (isdit) {
       return;
@@ -110,6 +130,25 @@ window.addEventListener("load", () => {
       }
     }
   });
+  taskslist.addEventListener("mousemove", (e) => {
+    let target = e.target;
+    if (target.classList.contains("task")) {
+      let newTitle = target.firstElementChild.nextElementSibling.value;
+      document.title = "todo list - " + newTitle;
+    } else if (target.classList.contains("task-text")) {
+      let newTitle = target.value;
+      document.title = "todo list - " + newTitle;
+    } else if (
+      target.classList.contains("bi") ||
+      target.classList.contains("checkbox")
+    ) {
+      let newTitle =
+        target.parentElement.firstElementChild.nextElementSibling.value;
+      document.title = "todo list - " + newTitle;
+    } else {
+      updateTitle();
+    }
+  });
   taskslist.addEventListener("click", (e) => {
     let target = e.target;
     if (target.classList.contains("bi-pencil-square")) {
@@ -125,6 +164,7 @@ window.addEventListener("load", () => {
       task.classList.add("edit");
       task.focus();
       task.setSelectionRange(task.value.length, task.value.length);
+      document.title = "todo list - " + task.value;
       isdit = true;
     } else if (target.classList.contains("bi-check-lg") || e.keyCode == 13) {
       target.classList.add("bi-pencil-square");
@@ -139,6 +179,7 @@ window.addEventListener("load", () => {
       task.value = task.value.trim();
       isdit = false;
       if (task.value != tmp) {
+        document.title = "todo list - " + task.value;
         let id = target.previousElementSibling.getAttribute("id");
         let newdatabase = {};
         for (let item of Object.entries(database)) {
@@ -158,7 +199,6 @@ window.addEventListener("load", () => {
         cleardata();
       }
     }
-
     if (target.classList.contains("bi-trash-fill")) {
       let task = target.parentElement;
       let id =

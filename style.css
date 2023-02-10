@@ -58,10 +58,10 @@ body {
   left: 8px;
   width: 40%;
   aspect-ratio: 1/1;
-  background-color: var(--bg-color);
+  background-color: var(--bg2-color);
   border-radius: 50%;
-  transition: all ease 200ms;
-  color: var(--bg2-color);
+  color: var(--bg-color);
+  transition: color var(--t), background-color var(--t), transform 500ms ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,7 +109,7 @@ section {
   gap: 20px;
   box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
     26px 30px 113px rgba(0, 0, 0, 0.07);
-  animation: loop 1 1500ms;
+  animation: loop 1 200ms;
 }
 @keyframes loop {
   0% {
