@@ -177,16 +177,17 @@ h1::before {
   left: 89%;
   position: absolute;
   content: attr(data-count);
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 30px;
+  aspect-ratio: 1/1;
   color: var(--text2-color);
   background-color: var(--bg3-color);
   border-radius: 50%;
-  font-size: 1rem;
+  font-size: 22px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
+  text-indent: 0.08em;
+  padding-top: 2px;
+  font-family: "Bebas Neue", cursive;
   box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
     26px 30px 113px rgba(0, 0, 0, 0.07);
 }
@@ -286,7 +287,7 @@ section main .task {
   display: flex;
   align-items: center;
   padding: 0 15px;
-  transition: all ease 200ms;
+  transition: all ease 300ms;
   box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
     26px 30px 113px rgba(0, 0, 0, 0.07);
 }
@@ -397,8 +398,6 @@ section main .task .bi-trash-fill:hover {
 .delet {
   transform: translate(500px) !important;
   opacity: 0 !important;
-  transition: color var(--t), background-color var(--t),
-    background-image var(--t), border var(--t);
 }
 
 footer {
@@ -436,9 +435,8 @@ footer p {
     font-size: 1.5em;
   }
   .dark {
-    transform: translateX(-105%);
+    transform: translateX(-106%);
   }
-
   h1 {
     top: -5px;
     font-size: 6.5rem;
@@ -446,9 +444,10 @@ footer p {
   h1::before {
     top: 8%;
     left: 88%;
-    width: 2rem;
-    height: 2rem;
-    font-size: 1.2rem;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    padding-top: 3px;
   }
   h1::after {
     top: 40%;
@@ -485,11 +484,12 @@ footer p {
     font-size: 10rem;
   }
   h1::before {
-    top: 9%;
+    top: 8%;
     left: 90%;
-    width: 3rem;
-    height: 3rem;
-    font-size: 2rem;
+    width: 42px;
+    height: 42px;
+    font-size: 30px;
+    padding-top: 3px;
   }
   h1::after {
     font-size: 5rem;
