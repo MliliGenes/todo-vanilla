@@ -21,7 +21,7 @@ window.addEventListener("load", () => {
   ];
   const darkColors = [
     "#1f1f1f",
-    "#c4c4c4",
+    "#d5d5d5",
     "#a8a8a8",
     "#dbdbdb",
     "#272727",
