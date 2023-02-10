@@ -481,6 +481,9 @@ footer p {
   section main .task .bi-pencil-square {
     right: 60px;
   }
+  section main .task .bi-check-lg {
+    right: 60px;
+  }
   footer {
     flex-direction: row;
     justify-content: space-between;
