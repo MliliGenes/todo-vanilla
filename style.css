@@ -65,7 +65,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0.5px;
+  padding-top: 0.05em;
   padding-right: 0.5px;
   box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
     26px 30px 113px rgba(0, 0, 0, 0.07);
