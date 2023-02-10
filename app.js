@@ -78,7 +78,7 @@ window.addEventListener("load", () => {
       task.removeAttribute("readonly");
       task.classList.add("edit");
       task.focus();
-      task.value = "";
+      task.setSelectionRange(task.value.length, task.value.length);
       isdit = true;
     } else if (target.classList.contains("bi-check-lg")) {
       target.classList.add("bi-pencil-square");
@@ -92,22 +92,25 @@ window.addEventListener("load", () => {
       task.classList.remove("edit");
       task.value = task.value.trim();
       isdit = false;
-      let id = target.previousElementSibling.getAttribute("id");
-      let newdatabase = {};
-      for (let item of Object.entries(database)) {
-        if (item[0] == id) {
-          let newid = new Date();
-          newdatabase[newid.getTime()] = {
-            task: task.value,
-            state: item[1].state,
-          };
-        } else {
-          newdatabase[item[0]] = { task: item[1].task, state: item[1].state };
+
+      if (task.value != tmp) {
+        let id = target.previousElementSibling.getAttribute("id");
+        let newdatabase = {};
+        for (let item of Object.entries(database)) {
+          if (item[0] == id) {
+            let newid = new Date();
+            newdatabase[newid.getTime()] = {
+              task: task.value,
+              state: item[1].state,
+            };
+          } else {
+            newdatabase[item[0]] = { task: item[1].task, state: item[1].state };
+          }
         }
+        database = newdatabase;
+        localStorage.setItem("tasks", JSON.stringify(database));
+        renderTasks();
       }
-      database = newdatabase;
-      localStorage.setItem("tasks", JSON.stringify(database));
-      renderTasks();
     }
 
     if (target.classList.contains("bi-trash-fill")) {
@@ -145,7 +148,6 @@ window.addEventListener("load", () => {
             newdatabase[item[0]] = { task: item[1].task, state: item[1].state };
           }
         }
-        console.log(newdatabase);
         database = newdatabase;
         localStorage.setItem("tasks", JSON.stringify(database));
         renderTasks();
