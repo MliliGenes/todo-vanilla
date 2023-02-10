@@ -32,7 +32,7 @@ window.addEventListener("load", () => {
     if (themes["theme"] == "light") {
       dot.classList.remove("togglechecked");
       dot.classList.remove("bi-moon-stars-fill");
-      dot.classList.add("bi-brightness-low-fill");
+      dot.classList.add("bi-sun-fill");
       theme.innerText = "light";
       let index = 0;
       for (let v of vars) {
@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
     } else {
       dot.classList.add("togglechecked");
       dot.classList.add("bi-moon-stars-fill");
-      dot.classList.remove("bi-brightness-low-fill");
+      dot.classList.remove("bi-sun-fill");
       theme.innerText = "dark";
       for (let v of vars) {
         let index = 0;

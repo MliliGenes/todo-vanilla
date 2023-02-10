@@ -31,7 +31,7 @@ body {
 .toggle-cont {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 8%;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -40,22 +40,22 @@ body {
 }
 .toggle-cont .toggle {
   position: relative;
-  width: 45px;
-  height: 28px;
+  width: 60px;
+  height: 40px;
   background-image: linear-gradient(45deg, var(--bg2-color), var(--bg3-color));
   transition: color var(--t), background-color var(--t),
     background-image var(--t), border var(--t);
   background-repeat: no-repeat;
   background-attachment: fixed;
   border-radius: 20px;
-  padding: 5px;
+  padding: 8px;
 }
 
 .toggle-cont .toggle .dot {
   position: absolute;
-  left: 5px;
-  height: 18px;
-  width: 18px;
+  left: 8px;
+  width: 40%;
+  aspect-ratio: 1/1;
   background-color: var(--bg-color);
   border-radius: 50%;
   transition: all ease 200ms;
@@ -63,19 +63,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: 0.5px;
+  padding-right: 0.5px;
 }
-.toggle-cont .toggle .bi-brightness-low-fill {
-  font-size: 1em;
+.toggle-cont .toggle .bi-sun-fill {
+  font-size: 0.95em;
 }
 .toggle-cont .toggle .bi-moon-stars-fill {
   font-size: 0.75em;
 }
 .togglechecked {
-  transform: translateX(17px);
+  transform: translateX(20px);
 }
 .toggle-cont .theme {
   font-family: "Bebas Neue", cursive;
@@ -352,26 +350,6 @@ footer p {
 @media screen and (min-width: 1224px) {
   body {
     padding-top: 120px;
-  }
-  .toggle-cont {
-    top: 30px;
-    right: 30px;
-  }
-  .toggle-cont .toggle {
-    width: 55px;
-    height: 35px;
-    padding: 6px;
-  }
-  .toggle-cont .toggle .dot {
-    left: 6px;
-    top: 6px;
-    height: 22px;
-    width: 22px;
-  }
-  .togglechecked {
-    height: 20px;
-    width: 20px;
-    transform: translateX(20px);
   }
   .toggle-cont .theme {
     font-size: 1.5em;
