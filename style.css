@@ -82,6 +82,15 @@ body {
 .toggle-cont .theme {
   font-family: "Bebas Neue", cursive;
   color: var(--text-color);
+  width: 50%;
+  overflow: hidden;
+}
+.toggle-cont .theme .txt {
+  white-space: nowrap;
+  transition: transform ease 400ms;
+}
+.dark {
+  transform: translateX(-105%);
 }
 section {
   width: 85vw;

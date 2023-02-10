@@ -3,6 +3,7 @@ window.addEventListener("load", () => {
   const toggle = document.querySelector(".toggle");
   const dot = document.querySelector(".dot");
   const theme = document.querySelector(".theme");
+  const text = document.querySelector(".txt");
   const vars = [
     "--bg-color",
     "--bg2-color",
@@ -33,7 +34,7 @@ window.addEventListener("load", () => {
       dot.classList.remove("togglechecked");
       dot.classList.remove("bi-moon-stars-fill");
       dot.classList.add("bi-sun-fill");
-      theme.innerText = "light";
+      text.classList.remove("dark");
       let index = 0;
       for (let v of vars) {
         let color = lightColors[index];
@@ -44,7 +45,7 @@ window.addEventListener("load", () => {
       dot.classList.add("togglechecked");
       dot.classList.add("bi-moon-stars-fill");
       dot.classList.remove("bi-sun-fill");
-      theme.innerText = "dark";
+      text.classList.add("dark");
       for (let v of vars) {
         let index = 0;
         for (let v of vars) {

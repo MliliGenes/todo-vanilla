@@ -1,4 +1,7 @@
 window.addEventListener("load", () => {
+  window.addEventListener("keyup", (e) => {
+    var key = e.keyCode;
+  });
   const input = document.querySelector("#input");
   const submit = document.querySelector("#submit");
   const taskslist = document.querySelector("#taskslist");
@@ -63,7 +66,6 @@ window.addEventListener("load", () => {
       }
     });
   }
-
   taskslist.addEventListener("click", (e) => {
     let target = e.target;
     if (target.classList.contains("bi-pencil-square")) {
@@ -80,7 +82,7 @@ window.addEventListener("load", () => {
       task.focus();
       task.setSelectionRange(task.value.length, task.value.length);
       isdit = true;
-    } else if (target.classList.contains("bi-check-lg")) {
+    } else if (target.classList.contains("bi-check-lg") || e.keyCode == 13) {
       target.classList.add("bi-pencil-square");
       target.classList.remove("bi-check-lg");
       target.classList.remove("edit");
@@ -92,7 +94,6 @@ window.addEventListener("load", () => {
       task.classList.remove("edit");
       task.value = task.value.trim();
       isdit = false;
-
       if (task.value != tmp) {
         let id = target.previousElementSibling.getAttribute("id");
         let newdatabase = {};
