@@ -172,8 +172,9 @@ h1 {
     26px 30px 113px rgba(0, 0, 0, 0.07);
 }
 h1::before {
-  top: 60%;
-  left: 90%;
+  z-index: 2;
+  top: 10%;
+  left: 89%;
   position: absolute;
   content: attr(data-count);
   width: 1.8rem;
@@ -188,6 +189,14 @@ h1::before {
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
     26px 30px 113px rgba(0, 0, 0, 0.07);
+}
+h1::after {
+  content: "S";
+  top: 38%;
+  left: 100%;
+  position: absolute;
+  color: var(--bg3-color);
+  font-size: 3rem;
 }
 section header form {
   width: 100%;
@@ -420,7 +429,8 @@ footer p {
 }
 @media screen and (min-width: 1224px) {
   body {
-    padding-top: 120px;
+    padding-top: 110px;
+    gap: 0;
   }
   .toggle-cont .theme {
     font-size: 1.5em;
@@ -430,12 +440,12 @@ footer p {
   }
 
   h1 {
-    top: 10px;
-    font-size: 6rem;
+    top: -5px;
+    font-size: 6.5rem;
   }
   h1::before {
-    top: 55%;
-    left: 90%;
+    top: 8%;
+    left: 88%;
     width: 2rem;
     height: 2rem;
     font-size: 1.2rem;
@@ -456,7 +466,7 @@ footer p {
   }
   section main {
     height: auto;
-    max-height: 300px;
+    max-height: 230px;
   }
   footer {
     flex-direction: row;
@@ -465,18 +475,21 @@ footer p {
 }
 @media only screen and (min-width: 1824px) {
   body {
-    padding-top: 230px;
+    padding-top: 190px;
   }
   h1 {
-    top: 15px;
+    top: 5px;
     font-size: 10rem;
   }
   h1::before {
-    top: 60%;
+    top: 9%;
     left: 90%;
     width: 3rem;
     height: 3rem;
     font-size: 2rem;
+  }
+  h1::after {
+    font-size: 5rem;
   }
   section {
     width: 60vw;
