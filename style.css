@@ -90,7 +90,7 @@ body {
   transition: transform ease 400ms;
 }
 .dark {
-  transform: translateX(-105%);
+  transform: translateX(-95%);
 }
 section {
   width: 85vw;
@@ -367,6 +367,9 @@ footer p {
   }
   .toggle-cont .theme {
     font-size: 1.5em;
+  }
+  .dark {
+    transform: translateX(-105%);
   }
   h1 {
     top: 10px;
