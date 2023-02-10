@@ -304,7 +304,7 @@ section main .task .task-text {
   left: 20px;
   border: none;
   outline: none;
-  width: 42vw;
+  width: 52%;
   background-color: transparent;
   font-size: 1.3em;
   color: var(--text2-color);
@@ -343,7 +343,7 @@ section main .task .bi:active {
 }
 section main .task .bi-pencil-square {
   position: absolute;
-  right: 60px;
+  right: 50px;
   font-size: 1.5em;
   color: var(--text2-color);
   transition: color var(--t), background-color var(--t),
@@ -356,7 +356,7 @@ section main .task .bi-pencil-square:hover {
 }
 section main .task .bi-check-lg {
   position: absolute;
-  right: 60px;
+  right: 50px;
   font-size: 1.5em;
   color: var(--text-color);
   transition: color var(--t), background-color var(--t),
@@ -364,7 +364,7 @@ section main .task .bi-check-lg {
 }
 section main .task .bi-trash-fill {
   position: absolute;
-  right: 20px;
+  right: 18px;
   font-size: 1.5em;
   color: var(--text2-color);
   transition: color var(--t), background-color var(--t),
@@ -467,9 +467,19 @@ footer p {
   section header form .submit {
     flex: 1;
   }
+
   section main {
     height: auto;
     max-height: 230px;
+  }
+  section main .task .task-text {
+    width: 80%;
+  }
+  section main .task .bi-trash-fill {
+    right: 20px;
+  }
+  section main .task .bi-pencil-square {
+    right: 60px;
   }
   footer {
     flex-direction: row;
