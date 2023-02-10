@@ -450,6 +450,9 @@ footer p {
     height: 2rem;
     font-size: 1.2rem;
   }
+  h1::after {
+    top: 40%;
+  }
   section {
     width: 60vw;
     height: auto;
