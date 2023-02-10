@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
     "#d3d3d3",
     "#444343",
     "#858585",
-    "#3a3a3a",
+    "#222222",
     "#ededed",
     "#ededed80",
   ];
@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
     "#1f1f1f",
     "#d5d5d5",
     "#959595",
-    "#dbdbdb",
+    "#f2f2f2",
     "#272727",
     "#21212180",
   ];
