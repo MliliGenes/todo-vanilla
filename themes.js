@@ -2,7 +2,6 @@ window.addEventListener("load", () => {
   const root = document.querySelector(":root");
   const toggle = document.querySelector(".toggle");
   const dot = document.querySelector(".dot");
-  const theme = document.querySelector(".theme");
   const text = document.querySelector(".txt");
   const vars = [
     "--bg-color",
