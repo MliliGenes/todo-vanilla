@@ -162,6 +162,8 @@ h1::before {
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 13.7px 15.8px 14.1px rgba(0, 0, 0, 0.031),
+    26px 30px 113px rgba(0, 0, 0, 0.07);
 }
 section header form {
   width: 100%;
