@@ -304,7 +304,7 @@ section main .task .task-text {
   left: 20px;
   border: none;
   outline: none;
-  width: 40%;
+  width: 42vw;
   background-color: transparent;
   font-size: 1.3em;
   color: var(--text2-color);
