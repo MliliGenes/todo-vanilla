@@ -206,6 +206,9 @@ window.addEventListener("load", () => {
       }
     }
     if (target.classList.contains("bi-trash-fill")) {
+      if (isdit) {
+        return;
+      }
       let task = target.parentElement;
       let id =
         target.previousElementSibling.previousElementSibling.getAttribute("id");
