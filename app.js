@@ -4,6 +4,7 @@ window.addEventListener("load", () => {
   const taskslist = document.querySelector("#taskslist");
   const title = document.querySelector("h1");
   const clear = document.querySelector(".clear");
+  const error = document.querySelector("#error");
 
   ischecked = true;
   var isdit = false;
@@ -13,19 +14,23 @@ window.addEventListener("load", () => {
   submit.addEventListener("click", (e) => {
     e.preventDefault();
     let newtask = input.value.trim();
-    if (!newtask) {
-      alert("please fill up the input!");
+    if (newtask == "" || newtask === null) {
+      error.classList.add("showerror");
+      setTimeout(() => {
+        error.classList.remove("showerror");
+      }, 1000);
       return;
-    }
-    let id = new Date();
-    database[id.getTime()] = { task: newtask, state: false };
-    input.value = "";
-    localStorage.setItem("tasks", JSON.stringify(database));
+    } else {
+      let id = new Date();
+      database[id.getTime()] = { task: newtask, state: false };
+      input.value = "";
+      localStorage.setItem("tasks", JSON.stringify(database));
 
-    renderTasks();
-    mainExist();
-    taskCount();
-    cleardata();
+      renderTasks();
+      mainExist();
+      taskCount();
+      cleardata();
+    }
   });
   renderTasks();
   mainExist();
