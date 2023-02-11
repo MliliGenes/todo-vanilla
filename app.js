@@ -105,7 +105,6 @@ window.addEventListener("load", () => {
     });
     updateTitle();
   }
-
   clear.addEventListener("click", (e) => {
     if (isdit) {
       return;
@@ -159,17 +158,20 @@ window.addEventListener("load", () => {
       target.classList.add("bi-check-lg");
       target.classList.add("edit");
       let task = target.previousElementSibling;
+      let taskzoon = target.parentElement;
+      taskzoon.classList.add("low");
       tmp = task.value;
       task.removeAttribute("readonly");
       task.classList.add("edit");
       task.focus();
       task.setSelectionRange(task.value.length, task.value.length);
-      document.title = "todo list - " + task.value;
       isdit = true;
-    } else if (target.classList.contains("bi-check-lg") || e.keyCode == 13) {
+    } else if (target.classList.contains("bi-check-lg")) {
       target.classList.add("bi-pencil-square");
       target.classList.remove("bi-check-lg");
       target.classList.remove("edit");
+      let taskzoon = target.parentElement;
+      taskzoon.classList.remove("low");
       let task = target.previousElementSibling;
       if (!task.value) {
         task.value = tmp;
@@ -179,7 +181,6 @@ window.addEventListener("load", () => {
       task.value = task.value.trim();
       isdit = false;
       if (task.value != tmp) {
-        document.title = "todo list - " + task.value;
         let id = target.previousElementSibling.getAttribute("id");
         let newdatabase = {};
         for (let item of Object.entries(database)) {
