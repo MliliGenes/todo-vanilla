@@ -6,7 +6,6 @@ window.addEventListener("load", () => {
   const clear = document.querySelector(".clear");
   const error = document.querySelector("#error");
 
-  ischecked = true;
   var isdit = false;
 
   var database = JSON.parse(localStorage.getItem("tasks")) || {};
@@ -101,11 +100,9 @@ window.addEventListener("load", () => {
       if (oneTask.getAttribute("data-set") == "true") {
         oneTask.previousElementSibling.classList.add("checked");
         oneTask.classList.add("checkedtask");
-        ischecked = false;
       } else {
         oneTask.previousElementSibling.classList.remove("checked");
         oneTask.classList.remove("checkedtask");
-        ischecked = true;
       }
     });
     updateTitle();
@@ -120,7 +117,6 @@ window.addEventListener("load", () => {
     ) {
       const clearTasks = document.querySelectorAll(".task");
       for (let task of clearTasks) {
-        let id = task.firstElementChild.nextElementSibling.getAttribute("id");
         task.classList.add("delet");
         setTimeout(function () {
           taskslist.removeChild(task);
@@ -156,21 +152,23 @@ window.addEventListener("load", () => {
   taskslist.addEventListener("click", (e) => {
     let target = e.target;
     if (target.classList.contains("bi-pencil-square")) {
-      if (!ischecked) {
+      let state = target.previousElementSibling.getAttribute("data-set");
+      if (state == "true") {
         return;
+      } else {
+        target.classList.remove("bi-pencil-square");
+        target.classList.add("bi-check-lg");
+        target.classList.add("edit");
+        let task = target.previousElementSibling;
+        let taskzoon = target.parentElement;
+        taskzoon.classList.add("low");
+        tmp = task.value;
+        task.removeAttribute("readonly");
+        task.classList.add("edit");
+        task.focus();
+        task.setSelectionRange(task.value.length, task.value.length);
+        isdit = true;
       }
-      target.classList.remove("bi-pencil-square");
-      target.classList.add("bi-check-lg");
-      target.classList.add("edit");
-      let task = target.previousElementSibling;
-      let taskzoon = target.parentElement;
-      taskzoon.classList.add("low");
-      tmp = task.value;
-      task.removeAttribute("readonly");
-      task.classList.add("edit");
-      task.focus();
-      task.setSelectionRange(task.value.length, task.value.length);
-      isdit = true;
     } else if (target.classList.contains("bi-check-lg")) {
       target.classList.add("bi-pencil-square");
       target.classList.remove("bi-check-lg");

@@ -242,7 +242,7 @@ section header form .input::placeholder {
   letter-spacing: 0.1em;
   font-size: 1em;
   position: absolute;
-  top: 5%;
+  top: 5vh;
   left: 50%;
   background-color: var(--text-color);
   color: var(--text2-color);
@@ -461,7 +461,6 @@ footer p {
     gap: 0;
   }
   #error {
-    top: 4.6%;
     font-size: 1.2em;
   }
   .toggle-cont .theme {
@@ -526,7 +525,6 @@ footer p {
     padding-top: 190px;
   }
   #error {
-    top: 8%;
     font-size: 1.6em;
   }
   h1 {
