@@ -5,154 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
-    <link rel="shortcut icon" href="lg.png" type="image/x-icon" />
-    <script defer src="app.js"></script>
-    <title>4persona</title>
+    <title>todo list</title>
   </head>
   <body>
-    <div class="container">
-      <div class="persona persona-A" data-key="A">
-        <img src="./lg.png" alt="" />
-        <span>type</span>
-        <h1>A</h1>
-        <!-- <button>discover this persona</button> -->
-      </div>
-      <div class="persona persona-B" data-key="B">
-        <img src="./lg.png" alt="" />
-        <span>type</span>
-        <h1>B</h1>
-        <!-- <button>discover this persona</button> -->
-      </div>
-      <div class="persona persona-C" data-key="C">
-        <img src="./lg.png" alt="" />
-        <span>type</span>
-        <h1>C</h1>
-        <!-- <button>discover this persona</button> -->
-      </div>
-      <div class="persona persona-D" data-key="D">
-        <img src="./lg.png" alt="" />
-        <span>type</span>
-        <h1>D</h1>
-        <!-- <button>discover this persona</button> -->
-      </div>
-      <div class="persona persona-X" data-key="X">
-        <img src="./lg.png" alt="" />
-        <span>type</span>
-        <h1>X</h1>
-        <!-- <button>discover this persona</button> -->
-      </div>
+    <div class="toggle-cont">
+      <div class="theme"><div class="txt">light dark</div></div>
+      <div class="toggle"><i class="dot bi bi-brightness-low-fill"></i></div>
     </div>
-    <div class="article article-A" data-key="A">
-      <img src="./lg.png" alt="" />
-      <div class="fade"></div>
-      <i class="fa-solid fa-xmark"></i>
-      <i class="fa-solid fa-arrow-down"></i>
-      <div class="content">
-        <div class="title">
-          <span>TYPE A</span>
-          <div class="line"></div>
-          <h2>Director</h2>
-        </div>
-        <div class="text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, eum
-            dignissimos! Fugiat officiis perspiciatis esse vel voluptates
-            architecto, debitis ipsam vero quod quia assumenda adipisci commodi
-            consequatur ipsum, fugit quam.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="article article-B" data-key="B">
-      <img src="./lg.png" alt="" />
-      <div class="fade"></div>
-      <i class="fa-solid fa-xmark"></i>
-      <i class="fa-solid fa-arrow-down"></i>
-      <div class="content">
-        <div class="title">
-          <span>TYPE B</span>
-          <div class="line"></div>
-          <h2>Socializer</h2>
-        </div>
-        <div class="text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, eum
-            dignissimos! Fugiat officiis perspiciatis esse vel voluptates
-            architecto, debitis ipsam vero quod quia assumenda adipisci commodi
-            consequatur ipsum, fugit quam.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="article article-C" data-key="C">
-      <img src="./lg.png" alt="" />
-      <div class="fade"></div>
-      <i class="fa-solid fa-xmark"></i>
-      <i class="fa-solid fa-arrow-down"></i>
-      <div class="content">
-        <div class="title">
-          <span>TYPE C</span>
-          <div class="line"></div>
-          <h2>Thinker</h2>
-        </div>
-        <div class="text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, eum
-            dignissimos! Fugiat officiis perspiciatis esse vel voluptates
-            architecto, debitis ipsam vero quod quia assumenda adipisci commodi
-            consequatur ipsum, fugit quam.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="article article-D" data-key="D">
-      <img src="./lg.png" alt="" />
-      <div class="fade"></div>
-      <i class="fa-solid fa-xmark"></i>
-      <i class="fa-solid fa-arrow-down"></i>
-      <div class="content">
-        <div class="title">
-          <span>TYPE D</span>
-          <div class="line"></div>
-          <h2>Supporter</h2>
-        </div>
-        <div class="text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, eum
-            dignissimos! Fugiat officiis perspiciatis esse vel voluptates
-            architecto, debitis ipsam vero quod quia assumenda adipisci commodi
-            consequatur ipsum, fugit quam.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="article article-X" data-key="X">
-      <img src="./lg.png" alt="" />
-      <div class="fade"></div>
-      <i class="fa-solid fa-xmark"></i>
-      <i class="fa-solid fa-arrow-down"></i>
-      <div class="content">
-        <div class="title">
-          <span>TYPE X</span>
-          <div class="line"></div>
-          <h2>Mixed</h2>
-        </div>
-        <div class="text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, eum
-            dignissimos! Fugiat officiis perspiciatis esse vel voluptates
-            architecto, debitis ipsam vero quod quia assumenda adipisci commodi
-            consequatur ipsum, fugit quam.
-          </p>
-        </div>
-      </div>
-    </div>
+    <div id="error">Please fill up the input</div>
+    <h1 onclick="window.location.reload()">Todo</h1>
+    <section>
+      <div class="clear"><div class="cleartxt">clear</div></div>
+      <header>
+        <form action="">
+          <input
+          
+            type="text"
+            class="input"
+            placeholder="new task..."
+            id="input"
+          />
+          <input type="submit" class="submit" id="submit" />
+        </form>
+      </header>
+      <main id="taskslist"></main>
+    </section>
+    <footer>
+      <p>saad el mlili-CodeCraft-Dev4Dev</p>
+      <p>2023/02/08 00:36 wednesday</p>
+    </footer>
+    <script src="app.js"></script>
+    <script src="themes.js"></script>
   </body>
 </html>
